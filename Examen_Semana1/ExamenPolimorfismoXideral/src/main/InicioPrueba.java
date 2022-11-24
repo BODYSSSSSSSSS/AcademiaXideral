@@ -14,38 +14,39 @@ import java.util.*;
  */
 public class InicioPrueba {
 
-    
     public static void main(String[] args) {
         System.out.println("Aplicando clases Abstractas\n---------------------");
-        
+
         List<Coche> vehiculos = getVehiculos();
 
         for (Coche coches : vehiculos) {
             System.out.println(coches.toString());
             coches.getLimiteVel();
         }
-        
+
         System.out.println("\nAplicando Interfaces\n--------------------------");
-        
-        List <IFigura> figuras = getFiguras();
-        
+
+        List<IFigura> figuras = getFiguras();
+
         for (IFigura figura : figuras) {
-            System.out.println("El area de "+figura.getClass().getSimpleName()+" es %.2f"+figura.getArea()+" el perimetro es: "+figura.perimetro());
+            System.out.println("El area de " + figura.getClass().getSimpleName() + " es " + figura.getArea() + " el perimetro es: " + figura.perimetro());
         }
 
     }
 
     static List<Coche> getVehiculos() {
-        return List.of(new Camion("JCW2", 55, 86),
-                new Tractor("DJGG", 25, 20, 4),
-                new AutoBus("GANS2", 68, 90, 55)
-        );
+        List<Coche> coches= new ArrayList();
+        coches.add(new Camion("JCW2", 55, 86));
+        coches.add(new Tractor("DJGG", 25, 20, 4));
+        coches.add(new AutoBus("GANS2", 68, 90, 55));
+        return coches;
     }
 
-    static List<IFigura> getFiguras(){
-        return List.of(new Triangulo(11, 7, 11,7.5),
-                new Rectangulo(5.48,12.5),
-                new Circulo(3.6)
-        );
+    static List<IFigura> getFiguras() {
+        List<IFigura> figuras = new ArrayList();
+        figuras.add(new Triangulo(11, 7, 11, 7.5));
+        figuras.add(new Rectangulo(5.48, 12.5));
+        figuras.add(new Circulo(3.6));
+        return figuras;
     }
 }
