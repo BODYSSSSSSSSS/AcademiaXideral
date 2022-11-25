@@ -18,7 +18,7 @@ public class InicioPrueba {
         System.out.println("Aplicando clases Abstractas\n---------------------");
 
         List<Coche> vehiculos = getVehiculos();
-
+            //var gato = 1;
         for (Coche coches : vehiculos) {
             System.out.println(coches.toString());
             coches.getLimiteVel();
